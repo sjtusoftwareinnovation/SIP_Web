@@ -1,0 +1,18 @@
+# Intellij
+.idea/
+*.iml
+*.iws
+
+#Eclipse
+.settings/
+.classpath
+.project
+
+# Node.js
+node_modules/
+build/
+*.log
+
+# Mac
+.DS_Store
+
