@@ -2,7 +2,7 @@
 
 ## 简介
 
-这是一个web应用，整合了校内外的竞赛、项目和校企信息等。本仓库为该项目的web端，server端参见[这里](https://github.com/sjtusoftwareinnovation/SIP__Server)。
+这是一个web应用，整合了校内外的竞赛、项目和校企信息等。本仓库为该项目的web端，server端参见[这里](https://github.com/sjtusoftwareinnovation/SIP_Server)。
 
 ## 需求背景
 
