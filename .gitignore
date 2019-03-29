@@ -10,7 +10,6 @@
 
 # Node.js
 node_modules/
-build/
 *.log
 
 # Mac
