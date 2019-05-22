@@ -6,12 +6,17 @@ export default [{
   children: [{
     path: '',
     component: r => require.ensure([], () => r(require('../components/basic.vue')), 'basic'),
-    redirect: '/welcome',
+    // redirect: '/welcome',
     children: [
       {
         path: '/welcome',
         name: 'welcome',
         component: r => require.ensure([], () => r(require('../page/welcome/welcome.vue')), 'welcome')
+      },
+      {
+        path: '/competitions',
+        name: 'competitions',
+        component: r => require.ensure([], () => r(require('../page/competitions/competitions.vue')), 'competitions')
       }
     ]
   }]
