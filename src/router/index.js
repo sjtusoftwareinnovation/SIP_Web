@@ -17,6 +17,32 @@ export default [{
         path: '/competitions',
         name: 'competitions',
         component: r => require.ensure([], () => r(require('../page/competitions/competitions.vue')), 'competitions')
+      },
+      {
+        path: '/competition/:id',
+        name: 'competition',
+        redirect: '/competition/:id/1',
+        component: r => require.ensure([], () => r(require('../page/competition/competition.vue')), 'competition'),
+        children: [
+          {
+            path: '/competition/:id/1',
+            name: 'cdetail',
+            component: r => require.ensure([], () => r(require('../page/competition/competitionDetail.vue')), 'cdetail')
+          },
+          {
+            path: '/competition/:id/2',
+            name: 'cteam',
+            component: r => require.ensure([], () => r(require('../page/competition/competitionTeam.vue')), 'cteam')
+          },
+          {
+            path: '/competition/:id/3',
+            name: 'cmyteam',
+            meta: {
+              requireAuth: true
+            },
+            component: r => require.ensure([], () => r(require('../page/competition/competitionMyTeam.vue')), 'cmyteam')
+          },
+        ]
       }
     ]
   }]
