@@ -79,6 +79,11 @@ export default [{
         path: '/businesses',
         name: 'businesses',
         component: r => require.ensure([], () => r(require('../page/businesses/businesses.vue')), 'businesses')
+      },
+      {
+        path: '/business/:id',
+        name: 'business',
+        component: r => require.ensure([], () => r(require('../page/business/business.vue')), 'business')
       }
     ]
   }]
