@@ -31,6 +31,12 @@ const state = {
     isloadingComplete: false,
     info: {}
   },
+  business: {
+    list: [],
+    totalPages: 0,
+    isloadingComplete: false,
+    info: {}
+  },
   pic: {
     'url': '',
   },
