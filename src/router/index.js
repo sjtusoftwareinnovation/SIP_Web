@@ -48,6 +48,32 @@ export default [{
         path: '/projects',
         name: 'projects',
         component: r => require.ensure([], () => r(require('../page/projects/projects.vue')), 'projects')
+      },
+      {
+        path: '/project/:id',
+        name: 'project',
+        redirect: '/project/:id/pdetail',
+        component: r => require.ensure([], () => r(require('../page/project/project.vue')), 'project'),
+        children: [
+          {
+            path: '/project/:id/pdetail',
+            name: 'pdetail',
+            component: r => require.ensure([], () => r(require('../page/project/projectDetail.vue')), 'pdetail')
+          },
+          {
+            path: '/project/:id/pteam',
+            name: 'pteam',
+            component: r => require.ensure([], () => r(require('../page/project/projectTeam.vue')), 'pteam')
+          },
+          {
+            path: '/project/:id/pmyteam',
+            name: 'pmyteam',
+            meta: {
+              requireAuth: true
+            },
+            component: r => require.ensure([], () => r(require('../page/project/projectMyTeam.vue')), 'pmyteam')
+          },
+        ]
       }
     ]
   }]
