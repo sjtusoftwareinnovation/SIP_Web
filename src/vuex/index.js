@@ -23,7 +23,11 @@ const state = {
       list: [],
       info: [],
       status: 0,
-    }
+    },
+    pic: {
+      'url': '',
+    },
+    userInfo: null
   },
 };
 
