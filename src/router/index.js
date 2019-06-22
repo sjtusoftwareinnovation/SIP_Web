@@ -43,6 +43,11 @@ export default [{
             component: r => require.ensure([], () => r(require('../page/competition/competitionMyTeam.vue')), 'cmyteam')
           },
         ]
+      },
+      {
+        path: '/projects',
+        name: 'projects',
+        component: r => require.ensure([], () => r(require('../page/projects/projects.vue')), 'projects')
       }
     ]
   }]

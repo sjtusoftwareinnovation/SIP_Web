@@ -23,12 +23,18 @@ const state = {
       list: [],
       info: [],
       status: 0,
-    },
-    pic: {
-      'url': '',
-    },
-    userInfo: null
+    }
   },
+  project: {
+    list: [],
+    totalPages: 0,
+    isloadingComplete: false,
+    info: {}
+  },
+  pic: {
+    'url': '',
+  },
+  userInfo: null
 };
 
 export default new Vuex.Store({
