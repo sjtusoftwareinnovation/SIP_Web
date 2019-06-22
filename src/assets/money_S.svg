@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.722 20.616">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #5c5c5c;
+      }
+    </style>
+  </defs>
+  <g id="thin-_calendar_m-02" transform="translate(-256 -217.981)">
+    <path id="路径_16" data-name="路径 16" class="cls-1" d="M60.941,65.139a.5.5,0,0,1-.5-.5V53.5a.5.5,0,1,1,1,0v11.14A.5.5,0,0,1,60.941,65.139Z" transform="translate(202.919 173.458)"/>
+    <path id="路径_17" data-name="路径 17" class="cls-1" d="M24.245,11.742a.5.5,0,0,1-.378-.167l-7.35-8.469a.5.5,0,1,1,.757-.656l7.35,8.457a.5.5,0,0,1-.379.835Z" transform="translate(239.616 215.718)"/>
+    <path id="路径_18" data-name="路径 18" class="cls-1" d="M60.921,11.734a.5.5,0,0,1-.378-.835l7.35-8.459a.5.5,0,1,1,.757.656L61.3,11.567A.5.5,0,0,1,60.921,11.734Z" transform="translate(202.939 215.726)"/>
+    <path id="路径_19" data-name="路径 19" class="cls-1" d="M35.2,54H22.281a.5.5,0,1,1,0-1H35.2a.5.5,0,0,1,0,1Z" transform="translate(235.121 173.458)"/>
+    <path id="路径_20" data-name="路径 20" class="cls-1" d="M35.2,77.732H22.281a.5.5,0,0,1,0-1H35.2a.5.5,0,0,1,0,1Z" transform="translate(235.121 153.692)"/>
+  </g>
+</svg>
