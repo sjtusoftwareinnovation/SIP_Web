@@ -84,6 +84,81 @@ export default [{
         path: '/business/:id',
         name: 'business',
         component: r => require.ensure([], () => r(require('../page/business/business.vue')), 'business')
+      },
+      {
+        path: '/user',
+        name: 'user',
+        redirect: '/user/team',
+        meta: {
+          requireAuth: true
+        },
+        component: r => require.ensure([], () => r(require('../page/user/user.vue')), 'user'),
+        children: [
+          {
+            path: '/user/team',
+            name: 'team',
+            meta: {
+              requireAuth: true
+            },
+            component: r => require.ensure([], () => r(require('../page/user/team.vue')), 'team')
+          },
+          {
+            path: '/user/application',
+            name: 'team',
+            meta: {
+              requireAuth: true
+            },
+            component: r => require.ensure([], () => r(require('../page/user/team.vue')), 'team')
+          },
+          {
+            path: '/user/ucompetition',
+            name: 'ucompetition',
+            meta: {
+              requireAuth: true
+            },
+            component: r => require.ensure([], () => r(require('../page/user/ucompetition.vue')), 'ucompetition')
+          },
+          {
+            path: '/user/ucompetition/create',
+            name: 'ucompetition',
+            meta: {
+              requireAuth: true
+            },
+            component: r => require.ensure([], () => r(require('../page/forms/competitionForm.vue')), 'competitionForm')
+          },
+          {
+            path: '/user/ubussiness',
+            name: 'ubusiness',
+            meta: {
+              requireAuth: true
+            },
+            component: r => require.ensure([], () => r(require('../page/user/ubusiness.vue')), 'ubusiness')
+          },
+          {
+            path: '/user/ubusiness/create',
+            name: 'ubusinessCreate',
+            meta: {
+              requireAuth: true
+            },
+            component: r => require.ensure([], () => r(require('../page/forms/businessForm.vue')), 'businessForm')
+          },
+          {
+            path: '/user/uproject',
+            name: 'uproject',
+            meta: {
+              requireAuth: true
+            },
+            component: r => require.ensure([], () => r(require('../page/user/uproject.vue')), 'uproject')
+          },
+          {
+            path: '/user/uproject/create',
+            name: 'uprojectCreate',
+            meta: {
+              requireAuth: true
+            },
+            component: r => require.ensure([], () => r(require('../page/forms/projectForm.vue')), ' ')
+          }
+        ]
       }
     ]
   }]
