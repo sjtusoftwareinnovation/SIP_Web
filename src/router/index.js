@@ -164,6 +164,11 @@ export default [{
             component: r => require.ensure([], () => r(require('../page/forms/projectForm.vue')), ' ')
           }
         ]
+      },
+      {
+        path: '/instructions',
+        name: 'instructions',
+        component: r => require.ensure([], () => r(require('../page/instructions/instructions.vue')), 'instructions')
       }
     ]
   }]
