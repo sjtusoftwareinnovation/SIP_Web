@@ -133,6 +133,14 @@ export default [{
               requireAuth: true
             },
             component: r => require.ensure([], () => r(require('../page/user/ubusiness.vue')), 'ubusiness')
+          },
+          {
+            path: '/user/ubusiness/create',
+            name: 'ubusinessCreate',
+            meta: {
+              requireAuth: true
+            },
+            component: r => require.ensure([], () => r(require('../page/forms/businessForm.vue')), 'businessForm')
           }
         ]
       }
