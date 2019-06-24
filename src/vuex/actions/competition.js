@@ -1,4 +1,5 @@
 import request from '@/common/request';
+import iView from 'iview'
 
 export const getCompetitions = ({commit}, params) => {
   commit('updateLoadingStateCompetition', false);
@@ -29,36 +30,36 @@ export const getCompetition = ({commit}, params) => {
 };
 
 export const createCompetition = ({commit}, params) => {
-  request.request({
-    url: '/sip/competition/add',
-    method: 'post',
-    data: params
-  }).withCredentials()
-    .then(function (res) {
-      const data = res.body;
-      if (data.code === 1) {
-        iView.Message.success("竞赛创建成功");
-        commit('CREATE_COMPETITION', {data: data.data});
-      }else{
-        iView.Message.error(data.message);
-      }
-    })
+    request.request({
+      url: '/sip/competition/add',
+      method: 'post',
+      data: params
+    }).withCredentials()
+      .then(function (res) {
+        const data = res.body;
+        if (data.code === 1) {
+          iView.Message.success("竞赛创建成功");
+          commit('CREATE_COMPETITION', {data: data.data});
+        }else{
+          iView.Message.error(data.message);
+        }
+      })
 };
 
 export const modifyCompetition = ({commit}, params) => {
-  request.request({
-    url: '/sip/competition/modify',
-    method: 'post',
-    data: params
-  }).withCredentials()
-    .then(function (res) {
-      const data = res.body;
-      if (data.code === 1) {
-        iView.Message.success("竞赛修改成功");
-        commit('MODIFY_COMPETITION', {data: data.data});
-      }else{
-        iView.Message.error("竞赛修改失败");
-      }
-    })
+    request.request({
+      url: '/sip/competition/modify',
+      method: 'post',
+      data: params
+    }).withCredentials()
+      .then(function (res) {
+        const data = res.body;
+        if (data.code === 1) {
+          iView.Message.success("竞赛修改成功");
+          commit('MODIFY_COMPETITION', {data: data.data});
+        }else{
+          iView.Message.error("竞赛修改失败");
+        }
+      })
 };
 
