@@ -22,7 +22,25 @@
     </div>
 
     <div class="nav-right">
-
+      <div v-if="($route.name !=='search' )">
+        <Input class="search" clearable search v-model="keyword" @on-search="searchShow"
+               @on-focus="searchShow" @on-change="searchShow" @on-blur="searchset=false"
+               icon="ios-search">
+        </Input>
+        <transition name="fade">
+          <div class="search-bar" v-if="searchset">
+            <router-link :to="{path:'/competitions',query:{key: keyword}}">
+              <div @click="searchClose">在竞赛中搜索：{{keyword}}</div>
+            </router-link>
+            <router-link :to="{path:'/projects',query:{key: keyword}}">
+              <div @click="searchClose">在项目中搜索：{{keyword}}</div>
+            </router-link>
+            <router-link :to="{path:'/businesses',query:{key: keyword}}">
+              <div @click="searchClose">在企业中搜索：{{keyword}}</div>
+            </router-link>
+          </div>
+        </transition>
+      </div>
       <Dropdown @on-click="logout" v-if="isLogin">
         <div class="user" @click="$router.push(`/user`)">
           <Avatar icon="person" class="avatar" src="https://avatars1.githubusercontent.com/u/10410257?s=460&v=4"/>
@@ -94,6 +112,12 @@
       }
     },
     watch: {
+      value: function (newKey) {
+        let length = newKey.split("搜索：").length;
+        if (length > 1) {
+          this.value = newValue.split("搜索：")[length - 1]
+        }
+      }
     },
     methods: {
       $_router1: function (key) {
@@ -108,6 +132,16 @@
           let errCallback = (msg) => this.$Message.error(msg);
           this.$store.dispatch('logout', {data: this.formValidate, successCall, errCallback});
         }
+      },
+      searchShow: function () {
+        if (this.keyword && this.keyword.length > 0) {
+          this.searchset = true;
+        } else {
+          this.searchset = false;
+        }
+      },
+      searchClose: function () {
+        this.searchset = false;
       },
       signupShow: function () {
         this.$router.push(`/welcome`);
