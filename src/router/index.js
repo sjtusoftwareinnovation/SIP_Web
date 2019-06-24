@@ -101,6 +101,14 @@ export default [{
               requireAuth: true
             },
             component: r => require.ensure([], () => r(require('../page/user/team.vue')), 'team')
+          },
+          {
+            path: '/user/application',
+            name: 'team',
+            meta: {
+              requireAuth: true
+            },
+            component: r => require.ensure([], () => r(require('../page/user/team.vue')), 'team')
           }
         ]
       }
