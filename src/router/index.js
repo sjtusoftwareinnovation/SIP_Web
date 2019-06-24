@@ -141,6 +141,22 @@ export default [{
               requireAuth: true
             },
             component: r => require.ensure([], () => r(require('../page/forms/businessForm.vue')), 'businessForm')
+          },
+          {
+            path: '/user/uproject',
+            name: 'uproject',
+            meta: {
+              requireAuth: true
+            },
+            component: r => require.ensure([], () => r(require('../page/user/uproject.vue')), 'uproject')
+          },
+          {
+            path: '/user/uproject/create',
+            name: 'uprojectCreate',
+            meta: {
+              requireAuth: true
+            },
+            component: r => require.ensure([], () => r(require('../page/forms/projectForm.vue')), ' ')
           }
         ]
       }
