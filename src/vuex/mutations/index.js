@@ -1,13 +1,17 @@
 import * as competition from './competition'
-import * as project from './project'
 import * as business from './business'
-import * as picture from './picture'
-import * as comment from './comment'
+import * as project from './project'
+import * as userData from './userData'
+import * as team from './team';
+import * as picture from './picture';
+import * as comment from './comment';
 
 export default {
   ...competition,
-  ...project,
   ...business,
+  ...project,
+  ...userData,
+  ...team,
   ...picture,
   ...comment
 }
