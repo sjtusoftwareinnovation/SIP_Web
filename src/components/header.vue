@@ -38,7 +38,6 @@
         <Button type="primary"  v-if="loginset" @click="signupShow">注册</Button>
       </div>
     </div>
-
     <div class="formContainer1" v-if="!isLogin&&($route.name =='welcome')&&(loginset)">
       <div class="form-signup">Login</div>
       <div class="sp">
@@ -46,7 +45,13 @@
       </div>
       <login-form></login-form>
     </div>
-
+    <div class="formContainer" v-if="!isLogin&&($route.name =='welcome')&&(!loginset)">
+      <div class="form-signup">Sign up</div>
+      <div class="sp">
+        <Divider/>
+      </div>
+      <signup-form v-on:to-login="loginset=true" ></signup-form>
+    </div>
   </div>
 
 </template>
@@ -54,6 +59,7 @@
 <script>
   import {mapState} from 'vuex';
   import loginForm from '@/page/forms/loginForm';
+  import signupForm from '@/page/forms/signupForm';
 
   export default {
     data() {
@@ -79,7 +85,8 @@
       })
     },
     components: {
-      loginForm
+      loginForm,
+      signupForm
     },
     mounted() {
       if (this.$route.query.login == 1 && !this.isLogin) {
@@ -92,6 +99,10 @@
       loginShow: function () {
         this.$router.push(`/welcome`);
         this.loginset = true;
+      },
+      signupShow: function () {
+        this.$router.push(`/welcome`);
+        this.loginset = false;
       },
       logout: function (key) {
         if (key == "logout") {
