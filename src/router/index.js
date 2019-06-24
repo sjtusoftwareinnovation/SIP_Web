@@ -85,6 +85,11 @@ export default [{
         name: 'business',
         component: r => require.ensure([], () => r(require('../page/business/business.vue')), 'business')
       },
+      // {
+      //   path: '/search/:keyword?',
+      //   name: 'search',
+      //   component: r => require.ensure([], () => r(require('../page/search/search.vue')), 'search')
+      // },
       {
         path: '/user',
         name: 'user',
