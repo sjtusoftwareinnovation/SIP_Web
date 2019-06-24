@@ -20,12 +20,40 @@
         </MenuItem>
       </Menu>
     </div>
+
+    <div class="nav-right">
+
+      <Dropdown @on-click="logout" v-if="isLogin">
+        <div class="user" @click="$router.push(`/user`)">
+          <Avatar icon="person" class="avatar" src="https://avatars1.githubusercontent.com/u/10410257?s=460&v=4"/>
+          <Icon type="more" size="30" class="more"></Icon>
+          <span>{{userInfo && userInfo.username}}</span>
+        </div>
+        <DropdownMenu slot="list">
+          <DropdownItem name="logout">退出登录</DropdownItem>
+        </DropdownMenu>
+      </Dropdown>
+      <div class="user" v-if="!isLogin">
+        <Button type="text" v-if="!loginset" @click="loginShow">登录</Button>
+        <Button type="primary"  v-if="loginset" @click="signupShow">注册</Button>
+      </div>
+    </div>
+
+    <div class="formContainer1" v-if="!isLogin&&($route.name =='welcome')&&(loginset)">
+      <div class="form-signup">Login</div>
+      <div class="sp">
+        <Divider/>
+      </div>
+      <login-form></login-form>
+    </div>
+
   </div>
 
 </template>
 
 <script>
   import {mapState} from 'vuex';
+  import loginForm from '@/page/forms/loginForm';
 
   export default {
     data() {
@@ -43,14 +71,38 @@
       'active'
     ],
     computed: {
+      isLogin: function () {
+        return this.userInfo && this.userInfo.username;
+      },
+      ...mapState({
+        userInfo: state => state.userInfo,
+      })
     },
     components: {
+      loginForm
     },
     mounted() {
+      if (this.$route.query.login == 1 && !this.isLogin) {
+        this.loginset = true;
+      }
     },
     watch: {
     },
     methods: {
+      loginShow: function () {
+        this.$router.push(`/welcome`);
+        this.loginset = true;
+      },
+      logout: function (key) {
+        if (key == "logout") {
+          let successCall = () => {
+            this.$Message.success("已退出账号");
+            this.$router.push(`/`)
+          };
+          let errCallback = (msg) => this.$Message.error(msg);
+          this.$store.dispatch('logout', {data: this.formValidate, successCall, errCallback});
+        }
+      }
     }
 
   };
