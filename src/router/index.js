@@ -109,6 +109,22 @@ export default [{
               requireAuth: true
             },
             component: r => require.ensure([], () => r(require('../page/user/team.vue')), 'team')
+          },
+          {
+            path: '/user/ucompetition',
+            name: 'ucompetition',
+            meta: {
+              requireAuth: true
+            },
+            component: r => require.ensure([], () => r(require('../page/user/ucompetition.vue')), 'ucompetition')
+          },
+          {
+            path: '/user/ucompetition/create',
+            name: 'ucompetition',
+            meta: {
+              requireAuth: true
+            },
+            component: r => require.ensure([], () => r(require('../page/forms/competitionForm.vue')), 'competitionForm')
           }
         ]
       }

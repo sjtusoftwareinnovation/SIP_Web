@@ -23,7 +23,7 @@
           <MenuItem name="1-1" to="/user/team">我的队伍</MenuItem>
           <MenuItem name="1-2" to="/user/application">我的申请</MenuItem>
         </Submenu>
-        <Submenu name="2" v-if="false">
+        <Submenu name="2">
           <template slot="title">
             <Icon type="ios-paper"/>
             竞赛
