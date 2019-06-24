@@ -84,25 +84,6 @@ export default [{
         path: '/business/:id',
         name: 'business',
         component: r => require.ensure([], () => r(require('../page/business/business.vue')), 'business')
-      },
-      {
-        path: '/user',
-        name: 'user',
-        redirect: '/user/team',
-        meta: {
-          requireAuth: true
-        },
-        component: r => require.ensure([], () => r(require('../page/user/user.vue')), 'user'),
-        children: [
-          {
-            path: '/user/team',
-            name: 'team',
-            meta: {
-              requireAuth: true
-            },
-            component: r => require.ensure([], () => r(require('../page/user/team.vue')), 'team')
-          }
-        ]
       }
     ]
   }]
