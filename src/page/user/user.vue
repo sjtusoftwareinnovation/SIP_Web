@@ -39,7 +39,7 @@
           <MenuItem name="3-1" to="/user/uproject" v-if="false">项目列表</MenuItem>
           <MenuItem name="3-2" to="/user/uproject/create">创建项目</MenuItem>
         </Submenu>
-        <Submenu name="4" v-if="false">
+        <Submenu name="4">
           <template slot="title">
             <Icon type="ios-paper"/>
             校企
